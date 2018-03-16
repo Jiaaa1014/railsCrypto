@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/about'
+  get 'home/lookup'
+  post 'home/lookup' => 'home/lookup'
+  root 'home#index'
+  # 不需要後面的url，就會是index.html.erb
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
