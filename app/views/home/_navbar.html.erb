@@ -17,11 +17,18 @@
 
       <ul class="nav navbar-nav navbar-right">
         
-        <li><%= link_to "Home", root_path%></li>
-        <li><%= link_to "About Us", home_about_path%></li>
-        <li><%= link_to "LookUp", home_lookup_path%></li>
-     
-     
+        <li><%= link_to "首頁", root_path%></li>
+        <li><%= link_to "關於我", home_about_path%></li>
+        <li><%= link_to "搜尋", home_lookup_path%></li>
+        
+        <% if user_signed_in? %>
+          <li><%= link_to "編輯個人資訊", edit_user_registration_path %></li>
+          <li><%= link_to "登出", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "註冊", new_user_registration_path %></li>
+          <li><%= link_to "登入", new_user_session_path %></li>
+        
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

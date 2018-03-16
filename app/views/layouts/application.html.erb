@@ -8,13 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-
-<%= render 'home/navbar' %>
-<div class="container">
-  <%= render 'home/flash' %>
-  
-<%= yield %>
-</div>
+  <%= render 'home/navbar' %>
+  <div class="container">
+    <%= render 'home/flash' %>
+    <%= yield %>
+  </div>
 </body>
 </html>
