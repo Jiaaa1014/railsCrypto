@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse">
-  <div class="container">
+  <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -22,6 +22,8 @@
         <li><%= link_to "搜尋", home_lookup_path%></li>
         
         <% if user_signed_in? %>
+          <li><%= link_to "清單", cryptos_path %></li>
+          <li><%= link_to "新增貨幣", new_crypto_path %></li>
           <li><%= link_to "編輯個人資訊", edit_user_registration_path %></li>
           <li><%= link_to "登出", destroy_user_session_path, method: :delete %></li>
         <% else %>
